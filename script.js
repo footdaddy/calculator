@@ -162,7 +162,7 @@ equals.addEventListener("click", () => {
             }
             else {
                 result.innerHTML = "undefined";
-            }
+            } 
         }
     }
 })
