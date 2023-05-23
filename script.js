@@ -99,9 +99,67 @@ zero.addEventListener("click", () => {
 })
 
 divide.addEventListener("click", () => {
+    display = result.innerHTML.toString();
+    if ((display.includes('+')) || (display.includes('-')) || (display.includes('*')) || (display.includes('/'))) {
+        if (operator === "+") {
+            let num2 = display.slice(display.indexOf("+ " + 1), );
+            if (num2 != "") {
+                console.log(num1);
+                console.log(num2);
+                num1 = (+num1)+(+num2);
+                operator="/"
+          result.innerHTML=(+num1) + " / ";
+         }
+             else {
+            result.innerHTML="ERROR";
+         }
+    }
+        else if (operator === "-") {
+            let num2 = display.slice(display.indexOf("- " + 5), )
+            console.log(num1);
+            console.log(num2);
+             if (num2 !== "") {
+                num1=(+num1)-(+num2);
+                operator = "/";
+            result.innerHTML=(+num1) + " / ";
+             }
+             else {
+               result.innerHTML="ERROR"
+             }
+            }
+        else if (operator === "*") {
+            let num2 = display.slice(display.indexOf(" * " + 4), )
+            if (num2 != "") {
+                num1=(+num1)*(+num2);
+                operator = "/"
+                result.innerHTML = (+num1) + " / ";
+            }
+            else {
+                result.innerHTML="ERROR"
+            }
+        }
+        else if (operator === "/") {
+            let num2 = display.slice(display.indexOf(" / " + 5), )
+            if ((+num2) > 0) {
+                num1=((+num1)/(+num2));
+                operator = "/"
+                result.innerHTML = (+num1) + " / ";
+            }
+            else if (((+num1) === 0) && ((+num2) === 0)) {
+                result.innerHTML = "0 / ";
+            }
+            else if ((num2) === 0){
+                result.innerHTML = "undefined";
+            } 
+            else {
+                result.innerHTML = "ERROR";
+            }
+        }
+    }
+    else {
     num1 = result.innerHTML;
     operator = "/";
-    result.innerHTML = num1 + " / ";
+    result.innerHTML = num1 + " / ";}
 })
 
 add.addEventListener("click", () => {
