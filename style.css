@@ -68,6 +68,7 @@ grid-area: seven;
     grid-area: divide;
     background-color: pink;
     color: black;
+    font-size: 1.5em;
 }
 
 #four {
@@ -86,6 +87,7 @@ grid-area: six;
     grid-area: multiply;
     background-color: pink;
     color: black;
+    font-size: 1.2em;
 }
 
 #one {
@@ -104,6 +106,7 @@ grid-area: six;
     grid-area: subtract;
     background-color: pink;
     color: black;
+    font-size: 1.7em;
 }
 
 #zero {
@@ -114,10 +117,12 @@ grid-area: six;
     grid-area: equals;
     background-color: pink;
     color: black;
+    font-size: 1.5em;
 }
 
 #add {
     grid-area: add;
     background-color: pink;
     color: black;
+    font-size: 1.5em;
 }
