@@ -1,37 +1,7 @@
-function getSum (addend1, addend2) {
-    return addend1 + addend2;
-}
-
-function getDifference(number1, number2) {
-    return number1-number2;
-} 
-
-function getProduct(integer1, integer2) {
-    return integer1 * integer2;
-}
-
-function getQuotient(dividend, divisor) {
-    return dividend/divisor;
-}
-
 let num1;
 let num2;
 let operator;
-
-function operate(num1, operator, num2) {
-    if (operator === 'add') {
-        getSum(num1, num2);
-    }
-    else if (operator === 'subtract') {
-        getDifference(num1, num2);
-    }
-    else if (operator === 'multiply') {
-        getProduct(num1, num2);
-    }
-    else {
-        getQuotient(num1, num2);
-    }
-}
+let answer;
 
 result = document.getElementById('result');
 let clear = document.getElementById('clear');
@@ -53,8 +23,8 @@ let equals = document.getElementById('equals');
 
 clear.addEventListener("click", () => {
     result.innerHTML = "";
-    num1 = "0";
-    num2 = "0";
+    num1 = "";
+    num2 = "";
     operator = "";
 })
 
@@ -107,6 +77,7 @@ divide.addEventListener("click", () => {
                 console.log(num1);
                 console.log(num2);
                 num1 = (+num1)+(+num2);
+                num1 = +num1.toFixed(3);
                 operator="/"
           result.innerHTML=(+num1) + " / ";
          }
@@ -115,7 +86,8 @@ divide.addEventListener("click", () => {
          }
     }
         else if (operator === "-") {
-            let num2 = display.slice(display.indexOf("- " + 5), )
+            console.log(display);
+           let num2 = display.slice(display.indexOf("- " + 1), )
             console.log(num1);
             console.log(num2);
              if (num2 !== "") {
@@ -230,6 +202,8 @@ multiply.addEventListener("click", () => {display = result.innerHTML.toString();
         if (operator === "+") {
             let num2 = display.slice(display.indexOf("+ " + 1), );
             if (num2 != "") {
+                console.log(num1);
+            console.log(num2);
                 num1 = (+num1)+(+num2);
                 operator="*"
           result.innerHTML=(+num1) + " * ";
@@ -239,7 +213,8 @@ multiply.addEventListener("click", () => {display = result.innerHTML.toString();
          }
     }
         else if (operator === "-") {
-            let num2 = display.slice(display.indexOf("- " + 5), )
+            console.log(display);
+            let num2 = display.slice(display.indexOf("- " + 1), )
             console.log(num1);
             console.log(num2);
              if (num2 !== "") {
@@ -291,6 +266,8 @@ subtract.addEventListener("click", () => { display = result.innerHTML.toString()
         if (operator === "+") {
             let num2 = display.slice(display.indexOf(" + " + 4), );
             if (num2 >= 0) {
+                console.log(num1);
+            console.log(num2);
                 num1 = (+num1)+(+num2);
                 operator = "-";
           result.innerHTML=(+num1) + " - ";
@@ -352,7 +329,8 @@ equals.addEventListener("click", () => {
             if (num2 !== "") {
                 console.log(num1);
                 console.log(num2);
-          result.innerHTML=((+num1)+(+num2));
+          answer=((+num1)+(+num2));
+          result.innerHTML = +answer.toFixed(3);
          }
              else {
             result.innerHTML="ERROR";
@@ -361,16 +339,18 @@ equals.addEventListener("click", () => {
         else if (operator === "-") {
             let num2 = display.slice(display.indexOf(" - " + 4), )
              if (num2 >= 0) {
-            result.innerHTML=((+num1)-(+num2));
+            answer =((+num1)-(+num2));
+            result.innerHTML = +answer.toFixed(3);
              }
              else {
                result.innerHTML="ERROR"
              }
             }
         else if (operator === "*") {
-            let num2 = display.slice(display.indexOf(" * " + 4), )
+            let num2 = display.slice(display.indexOf(" * " + 1), )
             if (num2 >= 0) {
-                result.innerHTML = ((+num1)*(+num2));
+                answer = ((+num1)*(+num2));
+                result.innerHTML = +answer.toFixed(3);
             }
             else {
                 result.innerHTML="ERROR"
@@ -380,7 +360,8 @@ equals.addEventListener("click", () => {
             let num2 = display.slice(display.indexOf("/ " + 4), )
             console.log(num2);
             if ((+num2) > 0) {
-                    result.innerHTML = ((+num1)/(+num2));
+                    answer = ((+num1)/(+num2))
+                    result.innerHTML = +answer.toFixed(3);
             }
             else if (((+num1) === 0) && ((+num2) === 0)) {
                 result.innerHTML = "0";
